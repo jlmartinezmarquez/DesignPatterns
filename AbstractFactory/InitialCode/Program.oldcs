@@ -1,0 +1,30 @@
+﻿using System;
+
+namespace AbstractFactory.InitialCode
+{
+    public class Program
+    {
+        static void MainOld(string[] args)
+        {
+            string description = args[0];
+            IMachine machine = GetMachine(description);
+            machine.TurnOn();
+            machine.TurnOff();
+
+            Console.ReadKey();
+        }
+
+        private static IMachine GetMachine(string description)
+        {
+            switch (description)
+            {
+                case "robot":
+                    return new Robot();
+                case "car":
+                    return new Car();
+                default:
+                    return new UnknownMachine();
+            }
+        }
+    }
+}
