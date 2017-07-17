@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{696C34BE-82FD-47DE-B78D-4BDA770B68A0}</ProjectGuid>
+    <ProjectGuid>{79ABC9FE-9AAA-4E0A-84DA-1B1BCDBEBE53}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AbstractFactory</RootNamespace>
-    <AssemblyName>AbstractFactory</AssemblyName>
+    <RootNamespace>StrategyPattern</RootNamespace>
+    <AssemblyName>StrategyPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,15 +24,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,27 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InitialCode\Car.oldcs" />
-    <None Include="InitialCode\IMachine.oldcs" />
-    <None Include="InitialCode\Program.oldcs" />
-    <None Include="InitialCode\MicrowaveOven.oldcs" />
+    <Compile Include="InitialCode\Address.cs" />
+    <Compile Include="InitialCode\Order.cs" />
+    <Compile Include="InitialCode\ShippingCostCalculatorService.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resolution\Machines\Car.cs" />
-    <Compile Include="Resolution\Machines\IMachine.cs" />
-    <Compile Include="Resolution\Factory\IMachineFactory.cs" />
-    <Compile Include="Resolution\Factory\MachineFactory.cs" />
-    <Compile Include="Resolution\MachineClient.cs" />
-    <Compile Include="Resolution\Machines\MicrowaveOven.cs" />
-    <Compile Include="Resolution\Program.cs" />
-    <Compile Include="Resolution\Machines\Robot.cs" />
-    <Compile Include="Resolution\Machines\UnknownMachine.cs" />
-    <None Include="InitialCode\Robot.oldcs" />
-    <None Include="InitialCode\UnknownMachine.oldcs" />
+    <Compile Include="InitialCode\ShippingOptionsEnum.cs" />
+    <Compile Include="Resolution\Address.cs" />
+    <Compile Include="Resolution\Context.cs" />
+    <Compile Include="Resolution\ShippingStrategy\IShippingStrategy.cs" />
+    <Compile Include="Resolution\Order.cs" />
+    <Compile Include="Resolution\ShippingStrategy\ShippingStrategyFedEx.cs" />
+    <Compile Include="Resolution\ShippingStrategy\ShippingStrategyUps.cs" />
+    <Compile Include="Resolution\ShippingStrategy\ShippingStrategySchenker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.txt" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
