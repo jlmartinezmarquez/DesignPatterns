@@ -2,11 +2,11 @@
 
 namespace StrategyPattern.Resolution
 {
-    public class Context
+    public class StrategyContext
     {
         private readonly IShippingStrategy _shippingStrategy;
 
-        public Context(IShippingStrategy shippingStrategy)
+        public StrategyContext(IShippingStrategy shippingStrategy)
         {
             _shippingStrategy = shippingStrategy;
         }
