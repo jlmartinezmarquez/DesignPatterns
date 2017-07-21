@@ -1,0 +1,1 @@
+﻿It doesn't work if you run it, well because there's no HttpContext in a Console Application, but the goal of implementing the Adapter Pattern has been achieved
