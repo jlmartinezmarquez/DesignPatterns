@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CompositePattern.InitialCode;
 
 namespace CompositePattern.Solution
 {
@@ -11,37 +10,21 @@ namespace CompositePattern.Solution
             int goldForKill = 1023;
             Console.WriteLine("You have killed the Monster and gained {0} coins!", goldForKill);
 
-            PlayerComponent andy = new PlayerComponent { Name = "Andy" };
-            PlayerComponent jane = new PlayerComponent { Name = "Jane" };
-            PlayerComponent eve = new PlayerComponent { Name = "Eve" };
-            PlayerComponent ann = new PlayerComponent { Name = "Ann" };
-            PlayerComponent edith = new PlayerComponent { Name = "Edith" };
-            GroupComposite developers = new GroupComposite { Name = "Developers", Members = { andy, jane, eve } };
+            var individuals = new Group();
+            individuals.Members.Add(new PlayerComponent() {Name = "Ann" });
+            individuals.Members.Add(new PlayerComponent() { Name = "Edith" });
 
-            List<PlayerComponent> individuals = new List<PlayerComponent> { ann, edith };
-            List<GroupComposite> groups = new List<GroupComposite> { developers };
+            var developers = new Group { Name = "Developers" };
+            developers.Members.Add(new PlayerComponent() { Name = "Andy" });
+            developers.Members.Add(new PlayerComponent() { Name = "Jane" });
+            developers.Members.Add(new PlayerComponent() { Name = "Eve" });
 
-            double totalToSplitBy = individuals.Count + groups.Count;
-            double amountForEach = goldForKill / totalToSplitBy;
-            double leftOver = goldForKill % totalToSplitBy;
+            var composite = new Group {Members = new List<IParticipant> {individuals, developers}};
+            composite.Gold += goldForKill;
 
-            foreach (PlayerComponent individual in individuals)
+            foreach (var element in composite.Members)
             {
-                individual.Gold += Convert.ToInt32(amountForEach + leftOver);
-                leftOver = 0;
-                individual.Stats();
-            }
-
-            foreach (GroupComposite group in groups)
-            {
-                double amountForEachGroupMember = amountForEach / group.Members.Count;
-                double leftOverForGroup = amountForEachGroupMember % group.Members.Count;
-                foreach (PlayerComponent member in group.Members)
-                {
-                    member.Gold += Convert.ToInt32(amountForEachGroupMember + leftOverForGroup);
-                    leftOverForGroup = 0;
-                    member.Stats();
-                }
+                element.Stats();
             }
 
             Console.ReadKey();

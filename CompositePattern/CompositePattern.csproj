@@ -47,8 +47,8 @@
     <Compile Include="InitialCode\Player.cs" />
     <Compile Include="InitialCode\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solution\GroupComposite.cs" />
-    <Compile Include="Solution\IPlayerComponent.cs" />
+    <Compile Include="Solution\Group.cs" />
+    <Compile Include="Solution\IParticipant.cs" />
     <Compile Include="Solution\PlayerComponent.cs" />
     <Compile Include="Solution\Program.cs" />
   </ItemGroup>
