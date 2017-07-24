@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CompositePattern.InitialCode;
 
 namespace CompositePattern.Solution
 {
@@ -15,25 +16,23 @@ namespace CompositePattern.Solution
             Player eve = new Player { Name = "Eve" };
             Player ann = new Player { Name = "Ann" };
             Player edith = new Player { Name = "Edith" };
+            Group developers = new Group { Name = "Developers", Members = { andy, jane, eve } };
 
-            CompositeGroup developers = new CompositeGroup("Developers") { Members = { andy, jane, eve } };
-
-            CompositeGroup individuals = new CompositeGroup("Individuals") { Members = { ann, edith } };
-
-            List<CompositeGroup> groups = new List<CompositeGroup> { developers };
+            List<Player> individuals = new List<Player> { ann, edith };
+            List<Group> groups = new List<Group> { developers };
 
             double totalToSplitBy = individuals.Count + groups.Count;
             double amountForEach = goldForKill / totalToSplitBy;
             double leftOver = goldForKill % totalToSplitBy;
 
-            foreach (var individual in individuals)
+            foreach (Player individual in individuals)
             {
                 individual.Gold += Convert.ToInt32(amountForEach + leftOver);
                 leftOver = 0;
                 individual.Stats();
             }
 
-            foreach (CompositeGroup group in groups)
+            foreach (Group group in groups)
             {
                 double amountForEachGroupMember = amountForEach / group.Members.Count;
                 double leftOverForGroup = amountForEachGroupMember % group.Members.Count;
