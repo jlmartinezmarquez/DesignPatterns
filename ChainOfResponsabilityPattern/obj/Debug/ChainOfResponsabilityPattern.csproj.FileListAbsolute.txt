@@ -1,0 +1,12 @@
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\ChainOfResponsabilityPattern.exe.config
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\ChainOfResponsabilityPattern.exe
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\ChainOfResponsabilityPattern.pdb
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\protobuf-net.dll
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\RegulusLibrary.dll
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\protobuf-net.pdb
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\protobuf-net.xml
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\RegulusLibrary.pdb
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\bin\Debug\RegulusLibrary.xml
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\obj\Debug\ChainOfResponsabilityPattern.csprojResolveAssemblyReference.cache
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\obj\Debug\ChainOfResponsabilityPattern.exe
+C:\Jose\DesignPatternsExcersises\ChainOfResponsabilityPattern\obj\Debug\ChainOfResponsabilityPattern.pdb

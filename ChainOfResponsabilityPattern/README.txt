@@ -1,0 +1,1 @@
+﻿https://dotnetcodr.com/2013/05/23/design-patterns-and-practices-in-net-the-chain-of-responsibility-pattern/
